@@ -1,0 +1,108 @@
+
+.firstdiv{
+  background: #000;
+}
+
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.header__h1 {
+  margin: 20px;
+  padding: 10px;
+  color: #FF0000;
+}
+
+.text_edit {
+  border-style: solid;
+    padding: 40px 28px;
+  background: #000;
+  margin: 0 auto;
+    width: 90%;
+    height: 500px;
+    resize: none;
+    color:#fff;
+}
+
+.chat-box{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.box{
+    transition: height .6s ease-out;
+    width: 300px;
+    height: 0px;
+    background: white;
+    color:black;
+    z-index: 9999;
+}
+.open:hover>.box{
+  height:400px;
+      transition: height .6s ease-out;
+}
+.open {
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid #3F51B5;
+    background: white;
+    color: black;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#share_btn {
+    position: absolute;
+    right: 7%;
+    background-color: #FF0000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#link{
+  color: red;
+}
+
+
+
