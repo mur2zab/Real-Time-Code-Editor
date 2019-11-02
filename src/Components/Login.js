@@ -1,39 +1,32 @@
 import React, { Component } from 'react';
 import './Login.css';
 import logo from '../codeeditorlogo.jpg';
-import axios from 'axios';
+import Fetcher from '../helpers/Fetcher';
+// import axios from 'axios';
 
 class Login extends Component {
 	constructor(){
 		super()
-
+    this.state = {
+      username: '',
+      roomId:  ''
+    }
     this.EnterRoom =this.EnterRoom.bind(this);
     this.CreateRoom =this.CreateRoom.bind(this);
 
 	}
 
-  EnterRoom(){
-    var roomid=document.getElementById('room').value;
-    var username =document.getElementById('username').value
-    axios({
-          method: 'get',
-          url: 'http://localhost:8080/CreateRoom/checkroom',
-          params:{
-            user:username,
-            room:roomid
-          },
-            }).then(response=>{
-            console.log(response);
-            if(response.data!==0 )
-            {
-              window.location="/CodeEditor?room="+response.data.roomid;
-            }
-            else
-            {
-              console.log("room does not exist");
-            }
-           });
-  }
+  async EnterRoom(){
+    try{
+      var roomid= this.state.roomId;
+      var username= this.state.username;
+      let respone = await Fetcher('GET', 'http://localhost:8000/api/checkroom', { username: username, room: roomid } );
+      if(!response)
+        alert('No such room id found');
+    }catch(err){
+      alert("Some Error Occured")
+    }
+}
 
 
 
@@ -55,10 +48,10 @@ class Login extends Component {
      
       <div className="formbackground">
         <label>Username: </label>
-        <input type="text" name="username" id="username"/>
+        <input type="text" name="username" id="username" onChange = {(text)=> this.setState({"username" : text})} />
         <br/>
         <label>Room Id: </label>
-        <input type="text" name="room" id="room"/>
+        <input type="text" name="room" id="room" onChange = {(text)=> this.setState({"roomId" : text})} />
         <button className="loginbutton" onClick={this.EnterRoom} >Login</button> 
         <br/>
        

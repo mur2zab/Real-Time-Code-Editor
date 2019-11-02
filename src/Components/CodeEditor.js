@@ -62,8 +62,8 @@ class CodeEditor extends Component {
     return (
     <div>
       <div className="firstdiv">
-        <header class="header">
-        <h1 class="header__h1" id="projname">Enjoy Coding!!!</h1>
+        <header className="header">
+        <h1 className="header__h1" id="projname">Enjoy Coding!!!</h1>
         <button onClick={this.shareRoomid} id="share_btn">Share</button>
         </header>
         <textarea class="text_edit" id="my_text" onChange={this.handleChange} >
