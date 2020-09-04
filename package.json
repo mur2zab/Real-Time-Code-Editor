@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.3",
-    "mongodb": "^3.1.6",
+    "mongodb": "^3.1.13",
     "react": "^16.6.3",
     "react-dom": "^16.5.1",
     "react-router": "^4.3.1",
